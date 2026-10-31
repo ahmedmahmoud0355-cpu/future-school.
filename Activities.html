@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Future School - Activities Booking</title>
+  <link rel="icon"  href="Screenshot 2026-10-27 173319.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="brand">Future School</a>
+    
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="News.html">News</a></li>
+        <li><a href="Activities.html" class="active">Activities</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html" class="login-btn">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container page-main booking-container">
+    <h1 class="page-title">Activity Registration</h1>
+
+    <form class="card">
+      <div class="form-grid">
+        <div>
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" name="fullname" required placeholder="Enter your name">
+        </div>
+        <div>
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="name@example.com">
+        </div>
+        <div>
+          <label for="activity">Select Activity</label>
+          <select id="activity" name="activity" required>
+            <option value="">Choose an activity...</option>
+            <option value="tech">Technology Club</option>
+            <option value="science">Science Lab</option>
+            <option value="arts">Arts & Design</option>
+          </select>
+        </div>
+        <div>
+          <label for="date">Preferred Date</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div class="span-2">
+          <label for="notes">Additional Notes</label>
+          <textarea id="notes" name="notes" rows="4" placeholder="Any special requests or inquiries..."></textarea>
+        </div>
+        <div class="span-2 checkbox-group">
+          <input type="checkbox" id="terms" name="terms" required>
+          <label for="terms">I agree to the school guidelines and activity rules.</label>
+        </div>
+        <div class="span-2">
+          <button type="submit" class="btn">Send Registration</button>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Future School. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>

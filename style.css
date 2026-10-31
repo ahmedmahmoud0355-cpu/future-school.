@@ -1,0 +1,406 @@
+/* --- Global Reset & Variables --- */
+:root {
+  --primary-blue: #1e3a8a;
+  --gold: #d97706;
+  --text-dark: #1f2937;
+  --surface: #f3f4f6;
+  --soft-bg: #ffffff;
+  --border-color: #e5e7eb;
+  --radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-dark);
+  background-color: var(--surface);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+main {
+  flex: 1;
+}
+
+/* --- Header & Navigation (Flexbox) --- */
+header {
+  background-color: var(--soft-bg);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.brand {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-links a:hover{
+  color: var(--gold);
+  
+}
+.nav-links a.active {
+  color: var(--gold);
+  transform: scale(1.1);
+}
+
+.nav-links .login-btn {
+  background-color: var(--primary-blue);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+}
+
+.nav-links .login-btn:hover {
+  background-color: #1e40af;
+  color: white;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-dark);
+}
+
+/* --- Shared Components --- */
+.btn {
+  display: inline-block;
+  background-color: var(--primary-blue);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.card {
+  background: var(--soft-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  transition: var(--transition);
+  animation: top 1s ease ;
+}
+
+.card:hover {
+  box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+}
+
+footer {
+  background-color: var(--primary-blue);
+  color: white;
+  text-align: center;
+  padding: 2rem 20px;
+  margin-top: 3rem;
+}
+
+
+
+/* الكلام الي جوه hero */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), #1e3a8a;
+  color: white;
+  padding: 5rem 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  animation: left 1s ease;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  animation: botom 2s ease;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: var(--primary-blue);
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* About & Staff */
+.page-main {
+  padding: 4rem 20px;
+}
+
+.page-title {
+  text-align: center;
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+}
+
+.page-subtitle {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+}
+
+.staff-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.staff-card {
+  flex: 1 1 calc(25% - 1.5rem);
+  min-width: 220px;
+}
+
+.staff-role {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.staff-desc {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* News Grid (CSS Grid) */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.blog-meta {
+  color: var(--gold);
+  font-size: 0.85rem;
+}
+
+.blog-summary {
+  margin: 0.5rem 0 1rem;
+}
+
+.read-more {
+  color: var(--primary-blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Forms (Booking, Contact & Login) */
+.booking-container {
+  max-width: 800px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.checkbox-group input {
+  width: auto;
+  margin: 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 20px;
+  flex-grow: 1;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+}
+
+.demo-note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--gold);
+  margin-top: 1rem;
+}
+
+.back-link-container {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.back-link {
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+/* Form Controls */
+input, select, textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+  transition: var(--transition);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+label {
+  font-weight: 500;
+  color: var(--text-dark);
+  display: block;
+}
+
+/* --- Media Queries (Task 10) --- */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--soft-bg);
+    padding: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .blog-grid,
+  .form-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .staff-grid {
+    flex-direction: column;
+  }
+
+  .staff-card {
+    flex: 1 1 100%;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+@keyframes top{
+   0%{
+     transform: translateX(0);
+     opacity: 0;
+   }
+   100%{
+    transform: translateX(50px);
+    opacity: 1;
+   }
+
+}
+@keyframes botom{
+   0%{
+     transform: translateY(50px);
+     opacity:1;
+   }
+   100%{
+    transform: translateY(-50px);
+    opacity: 0;
+   }
+
+}
+@keyframes left{
+  0%{
+     transform: translateY(-10px);
+     opacity:0;
+   }
+   100%{
+    transform: translateY(10px);
+    opacity: 1;
+   }
+
+}
